@@ -150,8 +150,8 @@ Measure Query Performance:
 
 ## **Repository Access**
 
-- URL: [GitHub Repository Link](https://github.com/your-username/local-database-optimization)
-- QR Code: *(Add QR Code Image Here)*
+- URL: [GitHub Repository Link](https://github.com/obandeh/local-database-optimization)
+
 
 ## **License**
 
