@@ -108,9 +108,28 @@ Query Optimization: 
         results = list(collection.find(query, {"\_id": 0, "Product ID": 1, "Product Name": 1}).limit(10))
 
 Replication(optional): 
+Replication ensures data redundancy and improves read performance by distributing queries across multiple nodes. 
+Follow these steps to set up a replica set in MongoDB:
+    
+    Start MongoDB with Replication Enabled:
+        mongod --replSet rs0 --bind_ip localhost
 
-    -  Set up a replica set for MongoDB (instructions in the repository).
-    -  Measure query performance with replication enabled.
+Initiate the Replica Set:
+        mongosh
+        rs.initiate()
+
+Add Secondary Nodes (if applicable):
+        rs.add("localhost:27018")
+
+Check the Replica Set Status:
+        rs.status()
+
+Modify the Query Script to Read from Secondaries:
+        client = MongoClient("mongodb://localhost:27017,localhost:27018/?replicaSet=rs0&readPreference=secondary")
+
+Measure Query Performance:
+        Run the high-speed query script and compare performance before and after replication.
+    
 
 ## **Results**
 
